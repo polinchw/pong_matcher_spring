@@ -16,7 +16,7 @@ cf login -a https://api.run.pivotal.io
 Target your org / space.
 
 ```bash
-cf target -o myorg -s myspace
+cf target -o polinchw -s development
 ```
 
 Sign up for a cleardb instance.
@@ -28,20 +28,19 @@ cf create-service cleardb spark mysql
 Build the app.
 
 ```bash
-brew install maven
-mvn package
+mvn clean install
 ```
 
 Push the app. Its manifest assumes you called your ClearDB instance 'mysql'.
 
 ```bash
-cf push -n mysubdomain
+cf push pong_matcher_spring -n pong-match-spring-polinchw
 ```
 
 Export the test host
 
 ```bash
-export HOST=http://mysubdomain.cfapps.io
+export HOST=http://pong-match-spring-polinchw.cfapps.io
 ```
 
 Now follow the [interaction instructions][interaction].
