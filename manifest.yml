@@ -1,0 +1,7 @@
+---
+applications:
+  - name: springpong.polinchw
+    buildpack: java_buildpack
+    path: target/pong-matcher-spring.jar
+    services:
+      - mysql
